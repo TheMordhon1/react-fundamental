@@ -8,3 +8,17 @@ body {
   background-color: white;
   color: black;
 }
+
+.button {
+  border: 2px solid #c8d4fa;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4e78f4;
+  font-family: "Poppins", sans-serif;
+  border-radius: 45px;
+  line-height: 26px;
+  padding: 8px 27px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: all 0.3s linear;
+}
