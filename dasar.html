@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script type="text/babel">
+      const root = document.querySelector("#root");
+      /* 
+    //   create element with Vanilla JS
+        const element = document.createElement("h1");
+        element.textContent = "Hello from JS !";
+        element.className ="heading-1";
+
+        root.appendChild(element);
+         */
+
+      //  create element with react
+      /*  const element = React.createElement("h1", {
+        children: "Hello From React",
+        className: "heading-1"
+      }); */
+
+      //   create two element in one parent
+      /* const p1 = React.createElement("p", {
+        children: "Hello From React Paragraf 1",
+      });
+      const p2 = React.createElement("p", {
+        children: "Hello From React Paragraf 2",
+      });
+
+      const element = React.createElement("div", {
+        children: [p1, p2],
+      }); */
+
+      //   create two element with no parent
+      /* const p1 = React.createElement("p", {
+        children: "Hello From React Paragraf 1",
+      });
+      const p2 = React.createElement("p", {
+        children: "Hello From React Paragraf 2",
+      });
+
+      const element = React.createElement(React.Fragment, {
+        children: [p1, p2],
+      }); */
+
+      //   Using JSX with BabelJS
+      /* const element = (
+        <ul>
+          <li>apple</li>
+          <li>grape</li>
+          <li>orange</li>
+        </ul>
+      ); */
+
+      //   Meng-embed data dengen JSX
+      function ngegas(text) {
+        return text.toUpperCase();
+      }
+      const name = "The Mordhon";
+      //   const element = <h1>Hello {name}</h1>;
+
+      const element = <h1>Hello {ngegas(name)}!!!</h1>;
+
+      ReactDOM.render(element, root);
+    </script>
+  </body>
+</html>
