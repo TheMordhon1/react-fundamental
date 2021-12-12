@@ -11,6 +11,10 @@
     "@babel/preset-react": "^7.16.0"
   },
   "scripts": {
-    "build": "babel src --out-dir public"
+    "build": "babel src --out-dir public",
+    "start": "lite-server --baseDir public"
+  },
+  "dependencies": {
+    "lite-server": "^2.6.1"
   }
 }
