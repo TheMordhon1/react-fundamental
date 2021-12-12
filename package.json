@@ -1,0 +1,8 @@
+{
+  "name": "react-fundamental",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TheMordhon1/react-fundamental.git",
+  "author": "themordhon <romdhonm12@gmail.com>",
+  "license": "MIT"
+}
