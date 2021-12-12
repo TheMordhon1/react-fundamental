@@ -27,10 +27,11 @@ function tick() {
 }
 
 function App() {
-  const state = React.useState(1);
+  /* const state = React.useState(1); */
 
-  const count = state[0];
-  const updateCount = state[1];
+  /* const count = state[0];
+  const updateCount = state[1]; */
+  const [count, updateCount] = React.useState(0);
   return (
     <div className="box">
       <h1>Counter</h1>

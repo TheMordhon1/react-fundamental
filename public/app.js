@@ -17,9 +17,11 @@ function tick() {
 }
 
 function App() {
-  const state = React.useState(1);
-  const count = state[0];
-  const updateCount = state[1];
+  /* const state = React.useState(1); */
+
+  /* const count = state[0];
+  const updateCount = state[1]; */
+  const [count, updateCount] = React.useState(0);
   return /*#__PURE__*/React.createElement("div", {
     className: "box"
   }, /*#__PURE__*/React.createElement("h1", null, "Counter"), /*#__PURE__*/React.createElement("button", {
