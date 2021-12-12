@@ -23,17 +23,18 @@ function tick() {
       </button>
     </div>
   );
-  ReactDOM.render([element, <App />], root);
+  ReactDOM.render([element, <App />, <App2 />], root);
 }
 
 function App() {
   /* const state = React.useState(1); */
+  /* useState(kondisiAwal,kondisiSetelahUpdate) berguna untuk membuat fitur yang dapat mengupdate data secara dinamis */
 
   /* const count = state[0];
   const updateCount = state[1]; */
   const [count, setCount] = React.useState(0);
   return (
-    <div className="box">
+    <div className="box2">
       <h1>Counter</h1>
       <button
         onClick={function () {
@@ -50,6 +51,42 @@ function App() {
       >
         +
       </button>
+    </div>
+  );
+}
+
+function App2() {
+  const [click, setClick] = React.useState("false");
+  const [count, setCount] = React.useState(0);
+
+  /* Use Effect berguna untuk memberikan hasil rendering yg maksimal,
+  dan dapat dikondisikan pada saat action apa (didalam useState)
+   element tersebut (didalam useEffect) dirender*/
+
+  React.useEffect(
+    function () {
+      console.log(document.getElementById("judul"));
+    },
+    [count] //kondisi dalam
+  );
+  return (
+    <div className="box">
+      <h1 id="judul">UseEffect</h1>
+      <button
+        onClick={function () {
+          setClick("true");
+        }}
+      >
+        {click}
+      </button>
+      <button
+        onClick={function () {
+          setCount(count + 1);
+        }}
+      >
+        Tambah Nilai
+      </button>{" "}
+      Nilai : {count}
     </div>
   );
 }

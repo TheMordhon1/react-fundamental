@@ -13,17 +13,19 @@ function tick() {
     className: "button",
     onClick: clickAlert.bind(this, "Hello, ini pesan dari alert")
   }, "Alert"));
-  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null)], root);
+  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null)], root);
 }
 
 function App() {
   /* const state = React.useState(1); */
 
+  /* useState(kondisiAwal,kondisiSetelahUpdate) berguna untuk membuat fitur yang dapat mengupdate data secara dinamis */
+
   /* const count = state[0];
   const updateCount = state[1]; */
   const [count, setCount] = React.useState(0);
   return /*#__PURE__*/React.createElement("div", {
-    className: "box"
+    className: "box2"
   }, /*#__PURE__*/React.createElement("h1", null, "Counter"), /*#__PURE__*/React.createElement("button", {
     onClick: function () {
       setCount(count - 1);
@@ -33,6 +35,32 @@ function App() {
       setCount(count + 1);
     }
   }, "+"));
+}
+
+function App2() {
+  const [click, setClick] = React.useState("false");
+  const [count, setCount] = React.useState(0);
+  /* Use Effect berguna untuk memberikan hasil rendering yg maksimal,
+  dan dapat dikondisikan pada saat action apa (didalam useState)
+   element tersebut (didalam useEffect) dirender*/
+
+  React.useEffect(function () {
+    console.log(document.getElementById("judul"));
+  }, [count] //kondisi dalam
+  );
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box"
+  }, /*#__PURE__*/React.createElement("h1", {
+    id: "judul"
+  }, "UseEffect"), /*#__PURE__*/React.createElement("button", {
+    onClick: function () {
+      setClick("true");
+    }
+  }, click), /*#__PURE__*/React.createElement("button", {
+    onClick: function () {
+      setCount(count + 1);
+    }
+  }, "Tambah Nilai"), " ", "Nilai : ", count);
 }
 
 tick();
