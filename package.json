@@ -4,5 +4,10 @@
   "main": "index.js",
   "repository": "https://github.com/TheMordhon1/react-fundamental.git",
   "author": "themordhon <romdhonm12@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-react": "^7.16.0"
+  }
 }
