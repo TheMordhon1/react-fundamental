@@ -13,10 +13,29 @@ function tick() {
     className: "button",
     onClick: clickAlert.bind(this, "Hello, ini pesan dari alert")
   }, "Alert"));
-  ReactDOM.render(element, root);
+  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null)], root);
+}
+
+function App() {
+  const state = React.useState(1);
+  const count = state[0];
+  const updateCount = state[1];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box"
+  }, /*#__PURE__*/React.createElement("h1", null, "Counter"), /*#__PURE__*/React.createElement("button", {
+    onClick: function () {
+      updateCount(count - 1);
+    }
+  }, "-"), /*#__PURE__*/React.createElement("span", null, count), /*#__PURE__*/React.createElement("button", {
+    onClick: function () {
+      updateCount(count + 1);
+    }
+  }, "+"));
 }
 
 tick();
-setInterval(function () {
+/* To active clock uncomment the function below */
+
+/* setInterval(function () {
   tick();
-});
+}); */
