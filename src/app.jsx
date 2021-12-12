@@ -31,13 +31,13 @@ function App() {
 
   /* const count = state[0];
   const updateCount = state[1]; */
-  const [count, updateCount] = React.useState(0);
+  const [count, setCount] = React.useState(0);
   return (
     <div className="box">
       <h1>Counter</h1>
       <button
         onClick={function () {
-          updateCount(count - 1);
+          setCount(count - 1);
         }}
       >
         -
@@ -45,7 +45,7 @@ function App() {
       <span>{count}</span>
       <button
         onClick={function () {
-          updateCount(count + 1);
+          setCount(count + 1);
         }}
       >
         +

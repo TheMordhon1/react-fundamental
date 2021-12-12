@@ -21,16 +21,16 @@ function App() {
 
   /* const count = state[0];
   const updateCount = state[1]; */
-  const [count, updateCount] = React.useState(0);
+  const [count, setCount] = React.useState(0);
   return /*#__PURE__*/React.createElement("div", {
     className: "box"
   }, /*#__PURE__*/React.createElement("h1", null, "Counter"), /*#__PURE__*/React.createElement("button", {
     onClick: function () {
-      updateCount(count - 1);
+      setCount(count - 1);
     }
   }, "-"), /*#__PURE__*/React.createElement("span", null, count), /*#__PURE__*/React.createElement("button", {
     onClick: function () {
-      updateCount(count + 1);
+      setCount(count + 1);
     }
   }, "+"));
 }
