@@ -10,12 +10,12 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-react": "^7.16.0"
   },
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
   "scripts": {
     "build": "babel src --out-dir public -w",
     "serve": "lite-server --baseDir public",
-    "start": "yarn build & yarn start"
-  },
-  "dependencies": {
-    "lite-server": "^2.6.1"
+    "start": "yarn build | yarn serve"
   }
 }

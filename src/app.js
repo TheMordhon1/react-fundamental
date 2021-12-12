@@ -1,4 +1,5 @@
 const root = document.querySelector("#root");
+console.log("ini berjalan dengan baik");
 
 /* Rendering Dengan ReactJS */
 function tick() {
