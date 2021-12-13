@@ -23,7 +23,10 @@ function tick() {
       </button>
     </div>
   );
-  ReactDOM.render([element, <App />, <App2 />, <App3 />], root);
+  ReactDOM.render(
+    [element, <App />, <App2 />, <App3 />, <App4 />, <App5 />],
+    root
+  );
 }
 
 function App() {
@@ -146,6 +149,47 @@ function App3() {
       >
         {!login ? "login" : "logout"}
       </button>
+    </div>
+  );
+}
+
+function App4() {
+  const [count, setCount] = React.useState(0);
+  const [subscribe, setSubscribe] = React.useState(false);
+
+  React.useEffect(function () {});
+
+  return (
+    <div className="box">
+      <h1>My Channel</h1>
+      <p>subscriber :0</p>
+      <button
+        onClick={function () {
+          if (!subscribe) {
+            setSubscribe(true);
+          } else {
+            setSubscribe(false);
+          }
+        }}
+      >
+        {(!subscribe && "Subscribe") || "Subscribed"}
+      </button>
+    </div>
+  );
+}
+
+function App5() {
+  const judulRef = React.useRef(null);
+
+  React.useEffect(function () {
+    setTimeout(function () {
+      judulRef.current.textContent =
+        "Berhasil di manipulasi (DOM Manipulation)";
+    }, 5000);
+  });
+  return (
+    <div className="box2">
+      <h1 ref={judulRef}>Belum di manupulasi (DOM Manipulation)</h1>
     </div>
   );
 }

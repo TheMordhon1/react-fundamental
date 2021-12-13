@@ -13,7 +13,7 @@ function tick() {
     className: "button",
     onClick: clickAlert.bind(this, "Hello, ini pesan dari alert")
   }, "Alert"));
-  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null)], root);
+  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null), /*#__PURE__*/React.createElement(App4, null), /*#__PURE__*/React.createElement(App5, null)], root);
 }
 
 function App() {
@@ -117,6 +117,37 @@ function App3() {
       }
     }
   }, !login ? "login" : "logout"));
+}
+
+function App4() {
+  const [count, setCount] = React.useState(0);
+  const [subscribe, setSubscribe] = React.useState(false);
+  React.useEffect(function () {});
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box"
+  }, /*#__PURE__*/React.createElement("h1", null, "My Channel"), /*#__PURE__*/React.createElement("p", null, "subscriber :0"), /*#__PURE__*/React.createElement("button", {
+    onClick: function () {
+      if (!subscribe) {
+        setSubscribe(true);
+      } else {
+        setSubscribe(false);
+      }
+    }
+  }, !subscribe && "Subscribe" || "Subscribed"));
+}
+
+function App5() {
+  const judulRef = React.useRef(null);
+  React.useEffect(function () {
+    setTimeout(function () {
+      judulRef.current.textContent = "Berhasil di manipulasi (DOM Manipulation)";
+    }, 5000);
+  });
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box2"
+  }, /*#__PURE__*/React.createElement("h1", {
+    ref: judulRef
+  }, "Belum di manupulasi (DOM Manipulation)"));
 }
 
 tick();
