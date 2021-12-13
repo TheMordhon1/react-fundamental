@@ -151,7 +151,7 @@ function App5() {
 }
 
 function App6() {
-  const cars = ["Toyota", "Honda", "Hyundai", "Mitsubitsi"];
+  const cars = ["Toyota", "Honda", "Hyundai", "Mitsubitsi", "Porsche", "Ferrari", "BMW", "Mercedez-Benz"];
   const totalCar = cars.length;
   console.log(cars.map(function (car) {
     return /*#__PURE__*/React.createElement("li", {
