@@ -73,12 +73,22 @@ function App2() {
     },
     [count] //kondisi dalam
   ); */
-  React.useEffect(
+  /* React.useEffect(
     function () {
       console.log("fetching data");
     },
-    [] //kondisi dalam
-  );
+    [] //untuk memastikan data tidak terender ketika state ter update
+  ); */
+
+  React.useEffect(function () {
+    console.log("init carousel");
+    return function () {
+      console.log("destroy carousel");
+    };
+  });
+  /* penggunaan useEffect dalam carousel adalah dengan memastikan,
+  data carousel tidak terupdate termenerus ketika state terupdate
+  dengan melakukan return sebuah function destroy */
   return (
     <div className="box">
       <h1 id="judul">UseEffect</h1>

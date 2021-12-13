@@ -56,10 +56,23 @@ function App2() {
     [count] //kondisi dalam
   ); */
 
+  /* React.useEffect(
+    function () {
+      console.log("fetching data");
+    },
+    [] //untuk memastikan data tidak terender ketika state ter update
+  ); */
+
   React.useEffect(function () {
-    console.log("fetching data");
-  }, [] //kondisi dalam
-  );
+    console.log("init carousel");
+    return function () {
+      console.log("destroy carousel");
+    };
+  });
+  /* penggunaan useEffect dalam carousel adalah dengan memastikan,
+  data carousel tidak terupdate termenerus ketika state terupdate
+  dengan melakukan return sebuah function destroy */
+
   return /*#__PURE__*/React.createElement("div", {
     className: "box"
   }, /*#__PURE__*/React.createElement("h1", {
