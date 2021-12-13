@@ -108,7 +108,7 @@ function App3() {
 
   return /*#__PURE__*/React.createElement("div", {
     className: "box2"
-  }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, login ? /*#__PURE__*/React.createElement("b", null, "Welcome, User !") : /*#__PURE__*/React.createElement("i", null, "Please, login !")), /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, login && /*#__PURE__*/React.createElement("b", null, "Welcome, User !") || /*#__PURE__*/React.createElement("i", null, "Please, login !")), /*#__PURE__*/React.createElement("button", {
     onClick: function () {
       if (!login) {
         setLogin(true);

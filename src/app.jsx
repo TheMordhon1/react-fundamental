@@ -133,7 +133,8 @@ function App3() {
   return (
     <div className="box2">
       <h1>Conditional Rendering (Login)</h1>
-      <h2>{login ? <b>Welcome, User !</b> : <i>Please, login !</i>}</h2>
+      {/* <h2>{login ? <b>Welcome, User !</b> : <i>Please, login !</i>}</h2> */}
+      <h2>{(login && <b>Welcome, User !</b>) || <i>Please, login !</i>}</h2>
       <button
         onClick={function () {
           if (!login) {
