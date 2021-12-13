@@ -24,7 +24,7 @@ function tick() {
     </div>
   );
   ReactDOM.render(
-    [element, <App />, <App2 />, <App3 />, <App4 />, <App5 />],
+    [element, <App />, <App2 />, <App3 />, <App4 />, <App5 />, <App6 />],
     root
   );
 }
@@ -193,6 +193,28 @@ function App5() {
     </div>
   );
 }
+
+function App6() {
+  const cars = ["Toyota", "Honda", "Hyundai", "Mitsubitsi"];
+  const totalCar = cars.length;
+  console.log(
+    cars.map(function (car) {
+      return <li key={car}>{car}</li>;
+    })
+  );
+  return (
+    <div className="box">
+      <h1>Mapping List Data and Keys</h1>
+      <ul>
+        {cars.map(function (car) {
+          return <li key={car}>{car}</li>;
+        })}
+      </ul>
+      <p>Total : {totalCar} Car</p>
+    </div>
+  );
+}
+
 tick();
 
 /* To active clock uncomment the function below */

@@ -3,6 +3,13 @@ body {
   color: white;
   max-width: 500px;
   margin: auto;
+  border: 1px solid #333;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  margin-left: 1em;
 }
 .box {
   padding: 2em;

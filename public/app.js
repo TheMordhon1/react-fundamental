@@ -13,7 +13,7 @@ function tick() {
     className: "button",
     onClick: clickAlert.bind(this, "Hello, ini pesan dari alert")
   }, "Alert"));
-  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null), /*#__PURE__*/React.createElement(App4, null), /*#__PURE__*/React.createElement(App5, null)], root);
+  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null), /*#__PURE__*/React.createElement(App4, null), /*#__PURE__*/React.createElement(App5, null), /*#__PURE__*/React.createElement(App6, null)], root);
 }
 
 function App() {
@@ -148,6 +148,23 @@ function App5() {
   }, /*#__PURE__*/React.createElement("h1", {
     ref: judulRef
   }, "Belum di manupulasi (DOM Manipulation)"));
+}
+
+function App6() {
+  const cars = ["Toyota", "Honda", "Hyundai", "Mitsubitsi"];
+  const totalCar = cars.length;
+  console.log(cars.map(function (car) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: car
+    }, car);
+  }));
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box"
+  }, /*#__PURE__*/React.createElement("h1", null, "Mapping List Data and Keys"), /*#__PURE__*/React.createElement("ul", null, cars.map(function (car) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: car
+    }, car);
+  })), /*#__PURE__*/React.createElement("p", null, "Total : ", totalCar, " Car"));
 }
 
 tick();
