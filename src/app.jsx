@@ -119,6 +119,13 @@ function App3() {
       <div className="box2">
         <h1>Conditional Rendering (Login)</h1>
         <h2>Mantap Sudah Login !</h2>
+        <button
+          onClick={function () {
+            setLogin(false);
+          }}
+        >
+          logout
+        </button>
       </div>
     );
   }

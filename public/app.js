@@ -94,7 +94,11 @@ function App3() {
   if (login) {
     return /*#__PURE__*/React.createElement("div", {
       className: "box2"
-    }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, "Mantap Sudah Login !"));
+    }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, "Mantap Sudah Login !"), /*#__PURE__*/React.createElement("button", {
+      onClick: function () {
+        setLogin(false);
+      }
+    }, "logout"));
   }
 
   return /*#__PURE__*/React.createElement("div", {
