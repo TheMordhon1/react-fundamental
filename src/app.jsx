@@ -114,7 +114,7 @@ function App2() {
 function App3() {
   const [login, setLogin] = React.useState(false);
 
-  if (login) {
+  /*  if (login) {
     return (
       <div className="box2">
         <h1>Conditional Rendering (Login)</h1>
@@ -128,17 +128,22 @@ function App3() {
         </button>
       </div>
     );
-  }
+  } */
+
   return (
     <div className="box2">
       <h1>Conditional Rendering (Login)</h1>
-      <h2>Login dulu bang !</h2>
+      <h2>{login ? <b>Welcome, User !</b> : <i>Please, login !</i>}</h2>
       <button
         onClick={function () {
-          setLogin(true);
+          if (!login) {
+            setLogin(true);
+          } else {
+            setLogin(false);
+          }
         }}
       >
-        login
+        {!login ? "login" : "logout"}
       </button>
     </div>
   );

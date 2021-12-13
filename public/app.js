@@ -90,24 +90,33 @@ function App2() {
 
 function App3() {
   const [login, setLogin] = React.useState(false);
-
-  if (login) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "box2"
-    }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, "Mantap Sudah Login !"), /*#__PURE__*/React.createElement("button", {
-      onClick: function () {
-        setLogin(false);
-      }
-    }, "logout"));
-  }
+  /*  if (login) {
+    return (
+      <div className="box2">
+        <h1>Conditional Rendering (Login)</h1>
+        <h2>Mantap Sudah Login !</h2>
+        <button
+          onClick={function () {
+            setLogin(false);
+          }}
+        >
+          logout
+        </button>
+      </div>
+    );
+  } */
 
   return /*#__PURE__*/React.createElement("div", {
     className: "box2"
-  }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, "Login dulu bang !"), /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, login ? /*#__PURE__*/React.createElement("b", null, "Welcome, User !") : /*#__PURE__*/React.createElement("i", null, "Please, login !")), /*#__PURE__*/React.createElement("button", {
     onClick: function () {
-      setLogin(true);
+      if (!login) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
     }
-  }, "login"));
+  }, !login ? "login" : "logout"));
 }
 
 tick();
