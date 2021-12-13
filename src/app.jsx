@@ -23,7 +23,7 @@ function tick() {
       </button>
     </div>
   );
-  ReactDOM.render([element, <App />, <App2 />], root);
+  ReactDOM.render([element, <App />, <App2 />, <App3 />], root);
 }
 
 function App() {
@@ -111,6 +111,31 @@ function App2() {
   );
 }
 
+function App3() {
+  const [login, setLogin] = React.useState(false);
+
+  if (login) {
+    return (
+      <div className="box2">
+        <h1>Conditional Rendering (Login)</h1>
+        <h2>Mantap Sudah Login !</h2>
+      </div>
+    );
+  }
+  return (
+    <div className="box2">
+      <h1>Conditional Rendering (Login)</h1>
+      <h2>Login dulu bang !</h2>
+      <button
+        onClick={function () {
+          setLogin(true);
+        }}
+      >
+        login
+      </button>
+    </div>
+  );
+}
 tick();
 
 /* To active clock uncomment the function below */

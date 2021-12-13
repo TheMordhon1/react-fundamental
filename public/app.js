@@ -13,7 +13,7 @@ function tick() {
     className: "button",
     onClick: clickAlert.bind(this, "Hello, ini pesan dari alert")
   }, "Alert"));
-  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null)], root);
+  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null)], root);
 }
 
 function App() {
@@ -86,6 +86,24 @@ function App2() {
       setCount(count + 1);
     }
   }, "Tambah Nilai"), " ", "Nilai : ", count);
+}
+
+function App3() {
+  const [login, setLogin] = React.useState(false);
+
+  if (login) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "box2"
+    }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, "Mantap Sudah Login !"));
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box2"
+  }, /*#__PURE__*/React.createElement("h1", null, "Conditional Rendering (Login)"), /*#__PURE__*/React.createElement("h2", null, "Login dulu bang !"), /*#__PURE__*/React.createElement("button", {
+    onClick: function () {
+      setLogin(true);
+    }
+  }, "login"));
 }
 
 tick();
