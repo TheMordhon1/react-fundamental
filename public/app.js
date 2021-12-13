@@ -42,11 +42,23 @@ function App2() {
   const [count, setCount] = React.useState(0);
   /* Use Effect berguna untuk memberikan hasil rendering yg maksimal,
   dan dapat dikondisikan pada saat action apa (didalam useState)
-   element tersebut (didalam useEffect) dirender*/
+   element tersebut (didalam useEffect) diklik*/
+
+  /* UseEffect berpengaruh untuk memberikan data update ketika suatu state di klik,
+   hal ini jarang digunakan karena biasanya update data hanya terjadi sekali ketika
+   dilakukan refresh/reload, oleh karenanya gunakan second argument dengan empty array
+   untuk memastikan tidak ada render ketika suatu state di ubah. */
+
+  /* React.useEffect(
+    function () {
+      console.log("update time");
+    },
+    [count] //kondisi dalam
+  ); */
 
   React.useEffect(function () {
-    console.log(document.getElementById("judul"));
-  }, [count] //kondisi dalam
+    console.log("fetching data");
+  }, [] //kondisi dalam
   );
   return /*#__PURE__*/React.createElement("div", {
     className: "box"
