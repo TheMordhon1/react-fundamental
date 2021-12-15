@@ -13,7 +13,7 @@ function tick() {
     className: "button",
     onClick: clickAlert.bind(this, "Hello, ini pesan dari alert")
   }, "Alert"));
-  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null), /*#__PURE__*/React.createElement(App4, null), /*#__PURE__*/React.createElement(App5, null), /*#__PURE__*/React.createElement(App6, null)], root);
+  ReactDOM.render([element, /*#__PURE__*/React.createElement(App, null), /*#__PURE__*/React.createElement(App2, null), /*#__PURE__*/React.createElement(App3, null), /*#__PURE__*/React.createElement(App4, null), /*#__PURE__*/React.createElement(App5, null), /*#__PURE__*/React.createElement(App6, null), /*#__PURE__*/React.createElement(App7, null)], root);
 }
 
 function App() {
@@ -165,6 +165,29 @@ function App6() {
       key: car
     }, car);
   })), /*#__PURE__*/React.createElement("p", null, "Total : ", totalCar, " Car"));
+}
+
+function App7() {
+  const namaRef = React.useRef(null);
+
+  function postData(event) {
+    const nama = namaRef.current.value;
+    event.preventDefault();
+    console.log("ini nama kamu kan ?", nama);
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "box2"
+  }, /*#__PURE__*/React.createElement("h2", null, "Input Form"), /*#__PURE__*/React.createElement("form", {
+    onSubmit: postData
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: ""
+  }, "Nama: "), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    ref: namaRef
+  })), /*#__PURE__*/React.createElement("button", {
+    type: "submit"
+  }, "Submit")));
 }
 
 tick();

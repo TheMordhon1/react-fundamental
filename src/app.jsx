@@ -24,7 +24,16 @@ function tick() {
     </div>
   );
   ReactDOM.render(
-    [element, <App />, <App2 />, <App3 />, <App4 />, <App5 />, <App6 />],
+    [
+      element,
+      <App />,
+      <App2 />,
+      <App3 />,
+      <App4 />,
+      <App5 />,
+      <App6 />,
+      <App7 />,
+    ],
     root
   );
 }
@@ -220,6 +229,27 @@ function App6() {
         })}
       </ul>
       <p>Total : {totalCar} Car</p>
+    </div>
+  );
+}
+
+function App7() {
+  const namaRef = React.useRef(null);
+  function postData(event) {
+    const nama = namaRef.current.value;
+    event.preventDefault();
+    console.log("ini nama kamu kan ?", nama);
+  }
+  return (
+    <div className="box2">
+      <h2>Input Form</h2>
+      <form onSubmit={postData}>
+        <div>
+          <label htmlFor="">Nama: </label>
+          <input type="text" ref={namaRef} />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
