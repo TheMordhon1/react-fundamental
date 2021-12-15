@@ -169,22 +169,33 @@ function App6() {
 
 function App7() {
   const namaRef = React.useRef(null);
+  const [namaNew, setNamaNew] = React.useState("Romdhon");
 
   function postData(event) {
     const nama = namaRef.current.value;
     event.preventDefault();
     console.log("ini nama kamu kan ?", nama);
+    console.log("ini nama baru kamu kan ?", namaNew);
   }
 
   return /*#__PURE__*/React.createElement("div", {
     className: "box2"
   }, /*#__PURE__*/React.createElement("h2", null, "Input Form"), /*#__PURE__*/React.createElement("form", {
     onSubmit: postData
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "Uncontrolled Component"), /*#__PURE__*/React.createElement("label", {
     htmlFor: ""
   }, "Nama: "), /*#__PURE__*/React.createElement("input", {
     type: "text",
     ref: namaRef
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "Controlled Component"), /*#__PURE__*/React.createElement("label", {
+    htmlFor: ""
+  }, "Nama: "), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    name: "nama",
+    value: namaNew,
+    onChange: function (event) {
+      setNamaNew(event.target.value);
+    }
   })), /*#__PURE__*/React.createElement("button", {
     type: "submit"
   }, "Submit")));

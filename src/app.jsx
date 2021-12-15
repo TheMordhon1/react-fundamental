@@ -235,18 +235,33 @@ function App6() {
 
 function App7() {
   const namaRef = React.useRef(null);
+  const [namaNew, setNamaNew] = React.useState("Romdhon");
   function postData(event) {
     const nama = namaRef.current.value;
     event.preventDefault();
     console.log("ini nama kamu kan ?", nama);
+    console.log("ini nama baru kamu kan ?", namaNew);
   }
   return (
     <div className="box2">
       <h2>Input Form</h2>
       <form onSubmit={postData}>
         <div>
+          <p>Uncontrolled Component</p>
           <label htmlFor="">Nama: </label>
           <input type="text" ref={namaRef} />
+        </div>
+        <div>
+          <p>Controlled Component</p>
+          <label htmlFor="">Nama: </label>
+          <input
+            type="text"
+            name="nama"
+            value={namaNew}
+            onChange={function (event) {
+              setNamaNew(event.target.value);
+            }}
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
